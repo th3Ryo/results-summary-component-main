@@ -1,0 +1,314 @@
+:root {
+    /* background gradientes */
+    --Light_slate_blue: hsl(252, 100%, 67%);
+    --Light_royal_blue: hsl(241, 81%, 54%);
+
+    /* circulos gradientes */
+    --Violet-blue : hsla(256, 72%, 46%, 1);
+    --Persian-blue : hsla(241, 72%, 46%, 0);
+
+    --Light_red_text: hsl(0, 100%, 67%);--Light_red: hsla(0, 100%, 67%, 5%);
+    --Orangey_yellow_text: hsl(39, 100%, 56%); --Orangey_yellow: hsla(39, 100%, 56%, 5%);
+    --Green_teal_text: hsl(166, 100%, 37%); --Green_teal: hsla(166, 100%, 37%, 5%);
+    --Cobalt_blue_text: hsl(234, 85%, 45%); --Cobalt_blue: hsla(234, 85%, 45%, 5%);
+
+    /* neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale_blue: hsl(221, 100%, 96%);
+    --Light_lavender: hsl(241, 100%, 89%);
+    --Dark_gray_blue: hsl(224, 30%, 27%);
+
+    --Fs:1.8rem  ; /* Font size */
+    }
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Siempre inicializar estas etiquetas en cada proyecto */
+    
+ 
+}
+/* Truco para calcular px utilizando rem */
+html{
+    font-size: 62.5%;
+    /* Al realizar esto siempre nuestro font-size será de 10px */
+    /* Si se quiere 20px, se pondrá 2rem, si se quieren 38px, se pondrán 3.8rem */
+    /* width: 375px; */
+
+}
+
+p{
+    font-size: var(--Fs);
+    font-weight: 800;
+    /* rem es similar a em, la diferencia reside en que rem siempre tomará como referencia el font-size de la etiqueta html
+    
+    En otras palabras:
+    1rem = html font size = 16px
+    */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* poniendole ancho y largo a el body este el section se ubica en el centro de la pantalla tanto horizontal como vertical */
+    width: 100vw ;
+    height: 100vh; 
+    font-family: 'Hanken Grotesk', sans-serif;
+    
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  .menuResultado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem
+    
+
+    
+  }
+
+  /*  interesante como se igual ambos lados */
+
+  .ladoIzquierdoMenu, .ladoDerechoMenu {
+        flex: 1; /* Hace que ambos elementos ocupen la misma proporción de espacio */
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        height: 54.5rem;
+    }
+
+  .ladoIzquierdoMenu {
+    background: linear-gradient(to top, var(--Light_royal_blue), var(--Light_slate_blue));
+    /* este borde fue para verificar por que no salia el borde
+    border: 1px solid black; */
+    border-radius: 4rem/4rem;
+    color: var(--White);
+    /* bordes laterales */
+    padding: 0rem 7.3rem 0rem 7.3rem;
+}
+
+    #textoLadoIzquierdo1 {
+        
+        height:  10 rem;
+        color: var(--Light_lavender);
+        
+        /* font-size: 3rem; */
+        padding: 4.5rem 0rem 3.5rem 0rem;
+    }
+
+    #textoLadoIzquierdo1 p{
+        font-size: 2.5rem;
+    }
+
+    /* para que me tomara los dos p me toco en este id inicialmente planteba hacerlo con ntchild pero no fue viable*/
+    #textoLadoIzquierdo2 {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: linear-gradient(to top, var(--Persian-blue), var(--Violet-blue));
+
+        
+        height: 21rem;
+        width: 21rem;
+        
+    }
+
+        #textoLadoIzquierdo2 p:nth-child(1) {
+            font-size: 8rem;
+            transform: translateY(0.4rem)
+        }
+
+      
+    #textoLadoIzquierdo3 {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        transform: translateY(1rem)
+
+    }
+
+        #textoLadoIzquierdo3 div:nth-child(1) {
+            display: flex;
+            align-items: end;
+            height: 4rem;
+            padding: 6.5rem 0rem 4rem 0rem;
+        }
+            #textoLadoIzquierdo3 div:nth-child(1) p:nth-child(1){
+                font-size: 3.1rem;
+            }
+        #textoLadoIzquierdo3 div:nth-child(2) {
+           
+            margin: 0rem 0rem 5rem 0rem;
+            color: var(--Light_lavender);
+            
+            transform: translateY(-2.3rem)
+
+        }
+
+.ladoDerechoMenu {
+    background: var(--White);
+    /* este borde fue para verificar por que no salia el borde */
+    /* border: 1px solid black;  */
+    border-radius: 1rem;
+    color: var(--Dark_gray_blue);
+    /* bordes laterales*/
+    padding: 0rem 4rem 0rem 4rem;
+}
+
+.textoLadoDerecho {
+    display: grid;
+    grid-template-columns: 12% auto 10% 20%;
+    align-content: center;
+    width: 30rem;
+    height: 6rem;
+    padding: 2.6rem 2.6rem 2.6rem 2.6rem;
+    border-radius: 1rem/1rem ;
+    margin: 1.1rem 0rem 1.1rem 0rem;
+}
+    .textoLadoDerecho img{
+        align-content: initial;
+    }
+
+    .textoLadoDerecho p:nth-child(2) {
+        text-align: initial;
+        
+    }
+
+    .textoLadoDerecho p:nth-child(3) {
+        text-align: end;
+    }
+
+    .textoLadoDerecho p:nth-child(4) {
+        text-align: end;
+        color: var(--Light_lavender);
+    }
+
+    .derecho1 {
+        background: var(--Light_red);   
+        margin-top: -1.5rem;
+    }
+
+    .derecho1 p:nth-child(2){
+        color: var(--Light_red_text);
+    }
+
+    .derecho2 {
+        background: var(--Orangey_yellow);   
+    }
+
+    .derecho2 p:nth-child(2){
+        color: var(--Orangey_yellow_text);
+    }
+
+    .derecho3 {
+        background: var(--Green_teal);   
+    }
+
+    .derecho3 p:nth-child(2){
+        color: var(--Green_teal_text);
+    }
+    .derecho4 {
+        background: var(--Cobalt_blue);   
+    }
+
+    .derecho4 p:nth-child(2){
+        color: var(--Cobalt_blue_text);
+    }
+
+button {
+        font-family: 'Hanken Grotesk', sans-serif;
+        color: var(--White);
+        background: var(--Dark_gray_blue);
+        border-radius: 2.6rem/2.6rem;
+        font-size: var(--Fs);
+        width: 30rem;
+        height: 6rem;
+        cursor: pointer;
+        margin: 3rem 0rem 5.5rem 0rem ;
+    }
+
+button:hover {
+    background: linear-gradient(to top, var(--Light_royal_blue), var(--Light_slate_blue));
+}
+
+
+
+
+.ladoDerechoMenu div:nth-child(1){
+    display: flex;
+    align-items: start;
+    padding: 0rem;
+    margin: 4rem 0rem 3rem 0rem;
+}
+
+.textoLadoDerecho p:nth-child(1){
+    text-align: left;
+    padding: 0;
+    font-size: 2.5rem;
+    
+}
+
+@media (max-width: 376px) {
+
+    .menuResultado {
+        flex-direction: column;
+        transform: translateY(13rem);
+        padding: 0;
+    }
+
+    .ladoIzquierdoMenu, .ladoDerechoMenu {
+        padding: 0rem 6rem 0rem 6rem;
+    }
+    #textoLadoIzquierdo1 {
+        display: flex;
+        align-items: center;
+        height: 8rem;
+        padding: 4rem 0rem 0rem 0rem;
+        
+    } 
+
+    #textoLadoIzquierdo3 div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 0rem 0rem 0rem 0rem;
+        
+    } 
+
+    #textoLadoIzquierdo3 div:nth-child(2) {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        transform: translateY(0rem);
+        margin: 1rem 0rem 1rem 0rem;
+        
+    } 
+
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
