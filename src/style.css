@@ -237,6 +237,7 @@ body {
 button {
         font-family: 'Hanken Grotesk', sans-serif;
         color: var(--White);
+        border: none;
         background: var(--Dark_gray_blue);
         border-radius: 2.6rem/2.6rem;
         font-size: var(--Fs);
